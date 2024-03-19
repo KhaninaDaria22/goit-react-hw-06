@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { Label, Form, Input, Button } from "./Phonebook.styled";
+// import { Label, Form, Input, Button } from "./Phonebook.styled";
 
     const Phonebook = ({onSubmit}) => {
       const [name, setName] = useState('');
@@ -30,10 +30,10 @@ import { Label, Form, Input, Button } from "./Phonebook.styled";
         return (
             <div>
               {/* Форма для введення імені контакту */}
-              <Form onSubmit={handleSubmit}>
-                <Label>
+              <form onSubmit={handleSubmit}>
+                <label>
                   Name
-                  <Input
+                  <input
                     type="text"
                     name="name"
                     value={name}
@@ -42,23 +42,23 @@ import { Label, Form, Input, Button } from "./Phonebook.styled";
                     onChange={handleNameChange}
                     required
                   />
-                </Label>
-                <Label>
+                </label>
+                <label>
                   Number
-                  <Input
+                  <input
                     type="tel"
                     name="number"
                     value={number}
-                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                    pattern="\+?\d{1,4}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                     onChange={handleNumberChange }/>
-                </Label>
+                </label>
                 {/* Кнопка для додавання контакту */}
-                <Button type="submit">
+                <button type="submit">
                   Add contact 
-                </Button>
-              </Form>
+                </button>
+              </form>
             </div>
           );
      };
