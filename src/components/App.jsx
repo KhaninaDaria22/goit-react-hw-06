@@ -12,6 +12,7 @@ import {
 } from "../redux/contactsSlice";
 import { setFilter } from "../redux/filtersSlice";
 
+
 const App = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);

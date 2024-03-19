@@ -1,8 +1,9 @@
-// import { FormSection, FormTitle } from "./Section.styled";
+import css from "../css/Section.module.css"
+
 
 const Section = ({title, children}) =>  {
         return (
-            <div>
+            <div className={css.diw}>
                 <h1>{title}</h1>
                 {children}
             </div>

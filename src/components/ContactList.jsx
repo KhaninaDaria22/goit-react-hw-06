@@ -1,16 +1,18 @@
 // import React from 'react';
 // import { List, ListItem, ItemWrapper, Button } from './ContactList.styled';
+import css from '../css/ContactList.module.css'
+
 
 const ContactList = ({ contacts, onDeleteContact }) => {
   return(
-    <ul>
+    <ul className={css.ulContacts}>
       {contacts.map(({ id, name, number }) => (
         <li key={id}>
           <div>
             <p>{name}: </p>
             <p>{number}</p>
           </div>
-          <button type="button" onClick={() => onDeleteContact(id)}>
+          <button className={css.buttonContacts} type="button" onClick={() => onDeleteContact(id)}>
             Delete
           </button>
         </li>

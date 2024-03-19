@@ -1,11 +1,12 @@
 
 // import { LabelList, Input } from "./Filter.styled";
+import css from "../css/Filter.module.css"
 
  const Filter = ({value, onChange}) => {
     return (
-        <label> 
+        <label className={css.labelFilter}> 
             Find contact by Name
-            <input type="text" value={value} onChange={onChange}></input>
+            <input className={css.inputFilter} type="text" value={value} onChange={onChange}></input>
         </label>
     );
  } 

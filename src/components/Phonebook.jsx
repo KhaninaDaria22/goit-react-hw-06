@@ -1,5 +1,6 @@
 import {useState} from "react";
 // import { Label, Form, Input, Button } from "./Phonebook.styled";
+import css from "../css/Phonebook.module.css"
 
     const Phonebook = ({onSubmit}) => {
       const [name, setName] = useState('');
@@ -28,12 +29,12 @@ import {useState} from "react";
 
 //рендер вихідної розмітки форми
         return (
-            <div>
+            <div > 
               {/* Форма для введення імені контакту */}
-              <form onSubmit={handleSubmit}>
-                <label>
+              <form className={css.divForm} onSubmit={handleSubmit}>
+                <label className={css.labelForm}>
                   Name
-                  <input
+                  <input className={css.inputform}
                     type="text"
                     name="name"
                     value={name}
@@ -43,9 +44,9 @@ import {useState} from "react";
                     required
                   />
                 </label>
-                <label>
+                <label className={css.labelForm}>
                   Number
-                  <input
+                  <input className={css.inputform}
                     type="tel"
                     name="number"
                     value={number}
@@ -55,7 +56,7 @@ import {useState} from "react";
                     onChange={handleNumberChange }/>
                 </label>
                 {/* Кнопка для додавання контакту */}
-                <button type="submit">
+                <button className={css.buttonForm} type="submit">
                   Add contact 
                 </button>
               </form>
