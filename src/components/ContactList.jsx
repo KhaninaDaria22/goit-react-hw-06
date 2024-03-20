@@ -1,35 +1,25 @@
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../redux/contactsSlice";
+import PropTypes from "prop-types";
 import css from "../css/ContactList.module.css";
-import PropTypes from 'prop-types';
-
+import Contact from "./Contact"
 
 const ContactList = ({ contacts }) => {
-  const dispatch = useDispatch();
-
-  const handleDeleteClick = (id) => {
-    dispatch(deleteContact(id));
-  };
-
   return (
     <ul className={css.ulContacts}>
       {contacts.map(({ id, name, number }) => (
-        <li key={id}>
-          <div>
-            <p>{name}: </p>
-            <p>{number}</p>
-          </div>
-          <button className={css.buttonContacts} type="button" onClick={() => handleDeleteClick(id)}>
-            Delete
-          </button>
-        </li>
+        <Contact key={id} id={id} name={name} number={number} />
       ))}
     </ul>
   );
 };
 
 ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default ContactList;

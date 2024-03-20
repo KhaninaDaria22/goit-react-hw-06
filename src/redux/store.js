@@ -10,7 +10,8 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist"; import storage from 'redux-persist/lib/storage' 
+} from "redux-persist"; 
+import storage from 'redux-persist/lib/storage' 
 
 const contactPersistConfig = {
   key: 'contact',
